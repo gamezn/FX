@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pagamento PIX</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+}
+
+.card{
+
+    background:linear-gradient(180deg,#0c0c0c,#050505);
+
+    border:1px solid rgba(57,255,20,0.28);
+
+    border-radius:32px;
+
+    padding:22px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 30px rgba(57,255,20,0.08),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:-120px;
+    right:-120px;
+
+    width:240px;
+    height:240px;
+
+    background:
+    radial-gradient(circle,
+    rgba(57,255,20,0.18),
+    transparent 70%);
+}
+
+.logo{
+
+    width:62px;
+    height:62px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:#101010;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+    0 0 20px rgba(57,255,20,0.12);
+}
+
+.logo span{
+    font-size:28px;
+    color:#39ff14;
+}
+
+h1{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+h1 span{
+    color:#39ff14;
+}
+
+.subtitle{
+
+    color:#b5b5b5;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+    margin-bottom:24px;
+}
+
+.info-box{
+
+    border:1.5px solid #39ff14;
+
+    border-radius:26px;
+
+    padding:22px 18px;
+
+    margin-bottom:22px;
+
+    background:rgba(255,255,255,0.01);
+}
+
+.label{
+
+    color:#8d8d8d;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+}
+
+.pix-box{
+
+    background:#111;
+
+    border-radius:18px;
+
+    padding:16px;
+
+    margin-bottom:22px;
+}
+
+.pix-key{
+
+    color:#39ff14;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    word-break:break-word;
+}
+
+.divider{
+
+    width:100%;
+    height:1px;
+
+    background:rgba(255,255,255,0.08);
+
+    margin:18px 0;
+}
+
+.info-title{
+
+    color:#8d8d8d;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+}
+
+.info-text{
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+}
+
+.copy-btn{
+
+    width:100%;
+
+    background:
+    linear-gradient(180deg,#5dff3f,#32d412);
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 8px 20px rgba(57,255,20,0.28);
+}
+
+.copy-btn:hover{
+    transform:scale(1.02);
+}
+
+#msg{
+
+    color:#39ff14;
+
+    margin-top:14px;
+
+    font-size:15px;
+
+    font-weight:600;
+}
+
+.security{
+
+    margin-top:18px;
+
+    color:#6f6f6f;
+
+    font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="logo">
+<span>◆</span>
+</div>
+
+<h1>Pagamento <span>PIX</span></h1>
+
+<p class="subtitle">
+Copie a chave PIX abaixo e cole no aplicativo do seu banco.
+</p>
+
+<div class="info-box">
+
+<div class="label">
+CHAVE PIX (CNPJ)
+</div>
+
+<div class="pix-box">
+
+<div class="pix-key" id="pix">
+42.330.809/0001-21
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="info-title">
+BENEFICIÁRIO
+</div>
+
+<div class="info-text">
+FX SOLUÇÕES E COMERCIO
+</div>
+
+<div class="divider"></div>
+
+<div class="info-title">
+BANCO
+</div>
+
+<div class="info-text">
+BRADESCO S.A
+</div>
+
+</div>
+
+<button class="copy-btn" onclick="copiarPix()">
+COPIAR CHAVE PIX
+</button>
+
+<div id="msg"></div>
+
+<div class="security">
+Transação 100% segura via PIX
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function copiarPix(){
+
+    const texto =
+    document.getElementById('pix').innerText;
+
+    navigator.clipboard.writeText(texto);
+
+    document.getElementById('msg').innerHTML =
+    '✓ PIX copiado com sucesso';
+
+}
+
+</script>
+
+</body>
+</html>
