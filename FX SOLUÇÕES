@@ -41,7 +41,7 @@ body{
 
     background:linear-gradient(180deg,#0c0c0c,#050505);
 
-    border:1px solid rgba(57,255,20,0.28);
+    border:1px solid rgba(255,0,0,0.25);
 
     border-radius:32px;
 
@@ -54,7 +54,7 @@ body{
     overflow:hidden;
 
     box-shadow:
-    0 0 30px rgba(57,255,20,0.08),
+    0 0 30px rgba(255,0,0,0.06),
     inset 0 0 20px rgba(255,255,255,0.02);
 }
 
@@ -72,7 +72,7 @@ body{
 
     background:
     radial-gradient(circle,
-    rgba(57,255,20,0.18),
+    rgba(255,0,0,0.18),
     transparent 70%);
 }
 
@@ -94,12 +94,12 @@ body{
     border:1px solid rgba(255,255,255,0.05);
 
     box-shadow:
-    0 0 20px rgba(57,255,20,0.12);
+    0 0 20px rgba(255,0,0,0.10);
 }
 
 .logo span{
     font-size:28px;
-    color:#39ff14;
+    color:#ff0000;
 }
 
 h1{
@@ -114,7 +114,7 @@ h1{
 }
 
 h1 span{
-    color:#39ff14;
+    color:#ff0000;
 }
 
 .subtitle{
@@ -130,7 +130,7 @@ h1 span{
 
 .info-box{
 
-    border:1.5px solid #39ff14;
+    border:1.5px solid #ff0000;
 
     border-radius:26px;
 
@@ -163,7 +163,7 @@ h1 span{
 
 .pix-key{
 
-    color:#39ff14;
+    color:#ff0000;
 
     font-size:22px;
 
@@ -205,7 +205,7 @@ h1 span{
     width:100%;
 
     background:
-    linear-gradient(180deg,#5dff3f,#32d412);
+    linear-gradient(180deg,#ff1a1a,#d80000);
 
     border:none;
 
@@ -224,7 +224,7 @@ h1 span{
     transition:0.3s;
 
     box-shadow:
-    0 8px 20px rgba(57,255,20,0.28);
+    0 8px 20px rgba(255,0,0,0.25);
 }
 
 .copy-btn:hover{
@@ -233,7 +233,7 @@ h1 span{
 
 #msg{
 
-    color:#39ff14;
+    color:#00ff88;
 
     margin-top:14px;
 
@@ -279,7 +279,7 @@ CHAVE PIX (CNPJ)
 <div class="pix-box">
 
 <div class="pix-key" id="pix">
-42.330.809/0001-21
+42.837.738/0001-58
 </div>
 
 </div>
@@ -291,7 +291,7 @@ BENEFICIÁRIO
 </div>
 
 <div class="info-text">
-FX SOLUÇÕES E COMERCIO
+GAME ZONE COMERCE LTDA
 </div>
 
 <div class="divider"></div>
@@ -301,7 +301,7 @@ BANCO
 </div>
 
 <div class="info-text">
-BRADESCO S.A
+SICOOB
 </div>
 
 </div>
